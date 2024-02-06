@@ -55,13 +55,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,38 +62,52 @@ class _MyHomePageState extends State<MyHomePage> {
         initialIndex: 1,
         length: 2,
         child: Scaffold(
-            appBar: AppBar(
-          toolbarHeight: 200,
-          flexibleSpace: Container(
-            child: SafeArea(
-              child: Column(children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(32.0, 16.0, 0.0, 0.0),
-                      child: Icon(Icons.close),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              pinned: true, 
+              floating: false, 
+              snap: false, 
+              flexibleSpace: FlexibleSpaceBar(
+                background: Container(
+                  child: SafeArea(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.fromLTRB(32.0, 16.0, 0.0, 0.0),
+                              child: Icon(Icons.close),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0.0, 48.0, 0.0, 0.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Image.asset(
+                                  'assets/hp.webp',
+                                  scale: 7,
+                                ),
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.fromLTRB(0.0, 16.0, 32.0, 0.0),
+                              child: Icon(Icons.exit_to_app),
+                            ),
+                          ],
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text("Рыцарь", style: TextStyle(fontSize: 20),),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0.0, 48.0, 0.0, 0.0),
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Image.asset(
-                            'assets/hp.webp',
-                            scale: 7,
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0.0, 16.0, 32.0, 0.0),
-                      child: Icon(Icons.exit_to_app),
-                    )
-                  ],
+                  ),
                 ),
-              ]),
-            ),
-          ),
-          bottom: const TabBar(tabs: [
+              ),
+              expandedHeight: 300,
+              bottom: const TabBar(tabs: [
             Tab(
               child: Text(
                 "hi, hello there",
@@ -118,6 +125,17 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             )
           ]),
-        )));
+            ),
+            const SliverFillRemaining(
+              child: TabBarView(
+                children: [
+                  Center(child: Text('Tab 1 Content')),
+                  Center(child: Text('Tab 2 Content')),
+                ],
+              ),
+            ),
+          ],
+        ),
+        ));
   }
 }
