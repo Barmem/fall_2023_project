@@ -32,6 +32,9 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Color.fromARGB(0, 0, 0, 0)
+        ),
         colorScheme: const ColorScheme.dark(
           primary: Color.fromARGB(255, 58, 83, 183),
           // Set brightness explicitly
