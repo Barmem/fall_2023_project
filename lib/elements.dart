@@ -114,6 +114,36 @@ class funnyHorizontalCard extends StatelessWidget {
     );
   }
 }
+
+class ButtonIconTextArrow extends StatelessWidget {
+
+  final Icon icon;
+  final String title;
+  final String description;
+
+  const ButtonIconTextArrow({
+    this.icon = const Icon(Icons.info, color: Color.fromARGB(255, 30, 215, 96),),
+    this.title = "Заголовок",
+    this.description = "Описание",
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {},
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              icon,
+              Expanded(child: TitleDesc(title: title, description: description, padding: EdgeInsets.fromLTRB(8, 0, 8, 0),)),
+              Icon(Icons.arrow_forward_ios_rounded),
+            ],
+          ),
         ),
       ),
     );

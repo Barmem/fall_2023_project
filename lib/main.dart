@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'spacebar.dart';
 import 'elements.dart';
 // import 'package:flutter/rendering.dart';
@@ -117,18 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     TitleDesc(title: "Тарифы и лимиты", description: "Для операций Сбербанк Онлайн",),
-                    const Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Icon(Icons.speed, color: Color.fromARGB(255, 4, 255, 0),),
-                            TitleDesc(title: "Изменить суточный лимит",description: "На платежи и переводы", padding: EdgeInsets.fromLTRB(8, 0, 8, 0),),
-                            Icon(Icons.arrow_forward_ios_rounded),
-                          ],
-                        ),
-                      ],
-                    ),
+                    ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
                     const Placeholder(fallbackHeight: 1200,)
                   ],
                 ),
