@@ -10,8 +10,8 @@ class TitleDesc extends StatelessWidget {
     this.title = 'Заголовок',
     this.description = 'Описание',
     this.titleSize = 20,
-    this.descriptionSize = 14,
-    this.padding = const EdgeInsets.fromLTRB(32.0, 0.0, 32.0, 0.0),
+    this.descriptionSize = 12,
+    this.padding = const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
     super.key,
   });
 
@@ -35,6 +35,7 @@ class TitleDesc extends StatelessWidget {
             softWrap: true,
             style: TextStyle(
               fontSize: descriptionSize,
+              color: Color.fromARGB(255, 144, 144, 144)
             ),
           ),
           
@@ -151,6 +152,38 @@ class ButtonIconTextArrow extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class BunchaChips extends StatelessWidget {
+  final List<String> chipLabels;
+  const BunchaChips({
+    required this.chipLabels,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+
+    List<Widget> chips = [];
+
+    for (String label in chipLabels) {
+      chips.add(
+        Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Chip(
+            shape: StadiumBorder(),
+            side: BorderSide.none,
+            backgroundColor: Color.fromARGB(20, 0, 0, 0),
+            label: Text(label),
+          ),
+        ),
+      );
+    }
+
+    return Wrap(
+      children: chips,
     );
   }
 }
