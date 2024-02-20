@@ -24,6 +24,7 @@ class TitleDesc extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
+            softWrap: true,
             style: TextStyle(
               fontSize: titleSize,
               fontWeight: FontWeight.bold,
@@ -31,6 +32,7 @@ class TitleDesc extends StatelessWidget {
           ),
           Text(
             description,
+            softWrap: true,
             style: TextStyle(
               fontSize: descriptionSize,
             ),
@@ -136,13 +138,16 @@ class ButtonIconTextArrow extends StatelessWidget {
         onTap: () {},
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              icon,
-              Expanded(child: TitleDesc(title: title, description: description, padding: EdgeInsets.fromLTRB(8, 0, 8, 0),)),
-              Icon(Icons.arrow_forward_ios_rounded),
-            ],
+          child: Container(
+            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                icon,
+                Expanded(child: TitleDesc(title: title, description: description, padding: EdgeInsets.fromLTRB(8, 0, 8, 0),)),
+                Icon(Icons.arrow_forward_ios_rounded),
+              ],
+            ),
           ),
         ),
       ),
