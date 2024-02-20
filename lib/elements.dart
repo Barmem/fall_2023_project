@@ -62,54 +62,41 @@ class funnyHorizontalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(255, 128, 128, 128).withOpacity(0.5), // Shadow color
-              spreadRadius: 1, // Spread radius
-              blurRadius: 7, // Blur radius
-            )
-          ],
-          color: Theme.of(context).scaffoldBackgroundColor, 
-        ),
-        child: Container(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () {},
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+      padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
+      child: Material(
+        borderRadius: BorderRadius.circular(10),
+        elevation: 7,
+        // color: Colors.transparent,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: InkWell(
+            onTap: () {},
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
-                          child: Image.asset(icon, height: 50,),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
-                          child: Text(
-                            iconTitle,
-                            style: const TextStyle(
-                              fontSize: 18
-                            ),
-                          ),
-                        )
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
+                      child: Image.asset(icon, height: 50,),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
+                      padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
+                      child: Text(
+                        iconTitle,
+                        style: const TextStyle(
+                          fontSize: 18
+                        ),
+                      ),
                     )
                   ],
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
+                )
+              ],
             ),
           ),
         ),
@@ -138,7 +125,7 @@ class ButtonIconTextArrow extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(16.0),
           child: Container(
             constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
             child: Row(

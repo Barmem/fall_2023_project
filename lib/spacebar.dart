@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 class SettingsSpacebar extends StatelessWidget {
   
   final String profilePicture;
+  final String name;
 
   const SettingsSpacebar({
     this.profilePicture = 'assets/hp.webp',
+    this.name = "Рыцарь",
     super.key,
   });
 
@@ -39,11 +41,15 @@ class SettingsSpacebar extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0.0, 48.0, 0.0, 0.0),
-                  child: ClipRRect(
+                  child: Material(
                     borderRadius: BorderRadius.circular(50),
-                    child: Image.asset(
-                      profilePicture,
-                      scale: 7,
+                    elevation:12,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.asset(
+                        profilePicture,
+                        scale: 7,
+                      ),
                     ),
                   ),
                 ),
@@ -65,9 +71,9 @@ class SettingsSpacebar extends StatelessWidget {
                 ),
               ],
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text("Рыцарь", style: TextStyle(fontSize: 20),),
+              child: Text(name, style: TextStyle(fontSize: 20),),
             ),
           ],
         ),

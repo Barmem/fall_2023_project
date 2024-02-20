@@ -97,31 +97,52 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           body: TabBarView(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                child: ListView(
-                  children: [
-                    const TitleDesc(title: "У вас подключено", description: "Подписки, автоплатежи и сервисы на которые вы подписались",),
-                    SizedBox(
-                      height: 180,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: const [
-                            funnyHorizontalCard(),
-                            funnyHorizontalCard(),
-                            funnyHorizontalCard(),
-                            funnyHorizontalCard(),
-                          ],
-                        ),
+              ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: const TitleDesc(title: "У вас подключено", description: "Подписки, автоплатежи и сервисы на которые вы подписались",),
+                  ),
+                  SizedBox(
+                    height: 180,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                            child: Row(
+                              children: [
+                                funnyHorizontalCard(),
+                                funnyHorizontalCard(),
+                                funnyHorizontalCard(),
+                                funnyHorizontalCard(),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    TitleDesc(title: "Тарифы и лимиты", description: "Для операций Сбербанк Онлайн",),
-                    ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
-                    const Placeholder(fallbackHeight: 1200,)
-                  ],
-                ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TitleDesc(title: "Тарифы и лимиты", description: "Для операций Сбербанк Онлайн",),
+                        ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
+                        Divider(
+                          height: 0,
+                          color: Color.fromARGB(183, 117, 117, 117),
+                        ),
+                        ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
+                        TitleDesc(title: "Интересы", description: "Мы подбираем истории и предложения по темам, которые вам нравятся",),
+                        BunchaChips(chipLabels: ["hi", "hello"]),
+                      ],
+                    ),
+                  )
+                ],
               ),
               const Center(child: Text('Tab 2 Content')),
             ],
@@ -131,4 +152,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
