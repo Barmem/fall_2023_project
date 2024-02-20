@@ -72,32 +72,48 @@ class funnyHorizontalCard extends StatelessWidget {
           ],
           color: Theme.of(context).scaffoldBackgroundColor, 
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
-                  child: Image.asset(icon, height: 50,),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
-                  child: Text(
-                    iconTitle,
-                    style: const TextStyle(
-                      fontSize: 18
+        child: Container(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {},
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
+                          child: Image.asset(icon, height: 50,),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
+                          child: Text(
+                            iconTitle,
+                            style: const TextStyle(
+                              fontSize: 18
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                  ),
-                )
-              ],
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
+                    )
+                  ],
+                ),
+              ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
-            )
-          ],
+          ),
+        ),
+      ),
+    );
+  }
+}
         ),
       ),
     );
