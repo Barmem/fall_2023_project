@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'spacebar.dart';
 import 'elements.dart';
 // import 'package:flutter/rendering.dart';
@@ -99,9 +98,9 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               ListView(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const TitleDesc(title: "У вас подключено", description: "Подписки, автоплатежи и сервисы на которые вы подписались",),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: TitleDesc(title: "У вас подключено", description: "Подписки, автоплатежи и сервисы на которые вы подписались",),
                   ),
                   SizedBox(
                     height: 180,
@@ -125,8 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

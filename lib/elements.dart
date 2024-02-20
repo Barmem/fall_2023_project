@@ -35,7 +35,7 @@ class TitleDesc extends StatelessWidget {
             softWrap: true,
             style: TextStyle(
               fontSize: descriptionSize,
-              color: Color.fromARGB(255, 144, 144, 144)
+              color: const Color.fromARGB(255, 144, 144, 144)
             ),
           ),
           
@@ -132,8 +132,8 @@ class ButtonIconTextArrow extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 icon,
-                Expanded(child: TitleDesc(title: title, description: description, padding: EdgeInsets.fromLTRB(8, 0, 8, 0),)),
-                Icon(Icons.arrow_forward_ios_rounded),
+                Expanded(child: TitleDesc(title: title, description: description, padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),)),
+                const Icon(Icons.arrow_forward_ios_rounded),
               ],
             ),
           ),
@@ -160,9 +160,9 @@ class BunchaChips extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(4.0),
           child: Chip(
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             side: BorderSide.none,
-            backgroundColor: Color.fromARGB(20, 0, 0, 0),
+            backgroundColor: const Color.fromARGB(20, 0, 0, 0),
             label: Text(label),
           ),
         ),

@@ -72,8 +72,8 @@ class SettingsSpacebar extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(name, style: TextStyle(fontSize: 20),),
+              padding: const EdgeInsets.all(8.0),
+              child: Text(name, style: const TextStyle(fontSize: 20),),
             ),
           ],
         ),
