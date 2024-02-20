@@ -67,37 +67,35 @@ class funnyHorizontalCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         elevation: 7,
         // color: Colors.transparent,
-        child: ClipRRect(
+        child: InkWell(
           borderRadius: BorderRadius.circular(10),
-          child: InkWell(
-            onTap: () {},
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
-                      child: Image.asset(icon, height: 50,),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
-                      child: Text(
-                        iconTitle,
-                        style: const TextStyle(
-                          fontSize: 18
-                        ),
+          onTap: () {},
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
+                    child: Image.asset(icon, height: 50,),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
+                    child: Text(
+                      iconTitle,
+                      style: const TextStyle(
+                        fontSize: 18
                       ),
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
-                )
-              ],
-            ),
+                    ),
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
+              )
+            ],
           ),
         ),
       ),
@@ -162,7 +160,7 @@ class BunchaChips extends StatelessWidget {
           child: Chip(
             shape: const StadiumBorder(),
             side: BorderSide.none,
-            backgroundColor: const Color.fromARGB(20, 0, 0, 0),
+            backgroundColor: Color.fromARGB(19, 128, 128, 128),
             label: Text(label),
           ),
         ),

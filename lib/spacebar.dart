@@ -25,16 +25,14 @@ class SettingsSpacebar extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {},
-                        child: const Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Icon(Icons.close),
-                        ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: () {},
+                      child: const Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Icon(Icons.close),
                       ),
                     ),
                   ),
@@ -55,16 +53,14 @@ class SettingsSpacebar extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {},
-                        child: const Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Icon(Icons.exit_to_app),
-                        ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: () {},
+                      child: const Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Icon(Icons.exit_to_app),
                       ),
                     ),
                   ),
