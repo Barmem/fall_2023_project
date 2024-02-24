@@ -6,12 +6,16 @@ class TitleDesc extends StatelessWidget {
   final double titleSize;
   final double descriptionSize;
   final EdgeInsetsGeometry padding;
+  final CrossAxisAlignment placementH;
+  final MainAxisAlignment placementV;
   const TitleDesc({
     this.title = 'Заголовок',
     this.description = 'Описание',
     this.titleSize = 20,
     this.descriptionSize = 12,
     this.padding = const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+    this.placementH = CrossAxisAlignment.start,
+    this.placementV = MainAxisAlignment.start,
     super.key,
   });
 
@@ -20,7 +24,8 @@ class TitleDesc extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: placementH,
+        mainAxisAlignment: placementV,
         children: <Widget>[
           Text(
             title,
@@ -70,32 +75,34 @@ class funnyHorizontalCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: () {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
-                    child: Image.asset(icon, height: 50,),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
-                    child: Text(
-                      iconTitle,
-                      style: const TextStyle(
-                        fontSize: 18
-                      ),
+          child: Container(
+            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0, 8, 4, 8),
+                      child: Image.asset(icon, height: 50,),
                     ),
-                  )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
-              )
-            ],
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(4, 8, 8, 8),
+                      child: Text(
+                        iconTitle,
+                        style: const TextStyle(
+                          fontSize: 18
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TitleDesc(title: subTitle, description: subDescription, titleSize:  14, descriptionSize: 10, padding: const EdgeInsets.all(0),),
+                )
+              ],
+            ),
           ),
         ),
       ),

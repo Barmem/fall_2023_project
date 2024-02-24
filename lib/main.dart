@@ -11,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,10 +18,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.light,
-        // scaffoldBackgroundColor: const Color.fromARGB(1, 1, 1, 1),
-        // appBarTheme: AppBarTheme(
-        //   backgroundColor: Color.fromARGB(1, 1, 1, 1)
-        // ),
         colorScheme: const ColorScheme.light(
           primary: Color.fromARGB(255, 58, 83, 183),
           // Set brightness explicitly
@@ -37,11 +32,14 @@ class MyApp extends StatelessWidget {
         ),
         colorScheme: const ColorScheme.dark(
           primary: Color.fromARGB(255, 58, 83, 183),
-          // Set brightness explicitly
           brightness: Brightness.dark,
         ),
+        dividerTheme: DividerThemeData(
+        space: 0,
+        color: Color.fromARGB(183, 117, 117, 117),
+        )
       ),
-      themeMode: ThemeMode.system, 
+      themeMode: ThemeMode.light, 
       /* ThemeMode.system to follow system theme, 
          ThemeMode.light for light theme, 
          ThemeMode.dark for dark theme
@@ -79,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 tabs: [
                   Tab(
                     child: Text(
-                      "hi, hello there",
+                      "Hollow Knight",
                       style: TextStyle(
                         fontSize: 20,
                       ),
@@ -87,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Tab(
                     child: Text(
-                      "Hi there, hello",
+                      "Silksong",
                       style: TextStyle(
                         fontSize: 20,
                       ),
@@ -103,10 +101,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: TitleDesc(title: "У вас подключено", description: "Подписки, автоплатежи и сервисы на которые вы подписались",),
+                    child: TitleDesc(title: "Амулеты", description: "Текущие экипированные амулеты",),
                   ),
                   SizedBox(
-                    height: 180,
+                    height: 240,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
                       child: ListView(
@@ -116,10 +114,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
                             child: Row(
                               children: [
-                                funnyHorizontalCard(),
-                                funnyHorizontalCard(),
-                                funnyHorizontalCard(),
-                                funnyHorizontalCard(),
+                                funnyHorizontalCard(iconTitle: "Капризный компас", subTitle: "Нашёптывает ваше местоположение, когда вы раскрываете карту.", subDescription: "Помогает скитальцу сориентироваться в пространстве.", icon: "assets/Wayward_Compass.webp",),
+                                funnyHorizontalCard(iconTitle: "Трюкач", subTitle: "Очень похож на чудаковатого жука, известного лишь как «Трюкач».", subDescription: "Носитель может чаще передвигаться рывками и даже делать рывок вниз. Отлично подходит для тех, кто хочет передвигаться быстрее.", icon: "assets/Dashmaster.webp",),
+                                funnyHorizontalCard(iconTitle: "Быстрый удар", subTitle: "Создан из неблаговидных и забракованных гвоздей, сплавившихся воедино. Они всё ещё жаждут обрести хозяев.", subDescription: "Позволяет чаще наносить удары гвоздем. ", icon: "assets/Quick_Slash.webp",),
+                                funnyHorizontalCard(iconTitle: "Длинный гвоздь", subTitle: "Увеличивает область атаки гвоздём, позволяя доставать врагов ударом с расстояния.", subDescription: "", icon: "assets/Longnail.webp",),
+                                funnyHorizontalCard(iconTitle: "Метка гордости", subTitle: "Племя богомолов награждает подобными амулетами тех, кого они уважают.", subDescription: "Весьма ощутимо увеличивает область атаки гвоздём, позволяя достать противников ударом с большого расстояния.", icon: "assets/Mark_of_Pride.webp",),
                               ],
                             ),
                           ),
@@ -134,19 +133,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         TitleDesc(title: "Тарифы и лимиты", description: "Для операций Сбербанк Онлайн",),
                         ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
-                        Divider(
-                          height: 0,
-                          color: Color.fromARGB(183, 117, 117, 117),
-                        ),
+                        Divider(),
                         ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
-                        TitleDesc(title: "Интересы", description: "Мы подбираем истории и предложения по темам, которые вам нравятся",),
-                        BunchaChips(chipLabels: ["hi", "hello"]),
+                        Divider(),
+                        ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
+                        TitleDesc(title: "Амулеты", description: "Текущие экипированные амулеты",),
+                        BunchaChips(chipLabels: ["Капризный компас", "Трюкач", "Быстрый удар", "Длинный гвоздь", "Метка гордости"]),
                       ],
                     ),
                   )
                 ],
               ),
-              const Center(child: Text('Tab 2 Content')),
+              const Center(child: TitleDesc(title: 'Silksong не найден!', description: "Могу предложить клоунский грим?", placementH: CrossAxisAlignment.center, placementV: MainAxisAlignment.center,)),
             ],
           ),
         ),
