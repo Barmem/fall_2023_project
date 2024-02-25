@@ -112,7 +112,7 @@ class funnyHorizontalCard extends StatelessWidget {
 
 class ButtonIconTextArrow extends StatelessWidget {
 
-  final Icon icon;
+  final Widget icon;
   final String title;
   final String description;
 
@@ -136,7 +136,10 @@ class ButtonIconTextArrow extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                icon,
+                Container(
+                  // padding: EdgeInsets.only(bottom:16),
+                  child: icon
+                  ),
                 Expanded(child: TitleDesc(title: title, description: description, padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),)),
                 const Icon(Icons.arrow_forward_ios_rounded),
               ],

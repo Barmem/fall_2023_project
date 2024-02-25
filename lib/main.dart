@@ -126,19 +126,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TitleDesc(title: "Тарифы и лимиты", description: "Для операций Сбербанк Онлайн",),
-                        ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
+                        ButtonIconTextArrow(icon: Image.asset("assets/map.webp", width: 50,), title: "Карта", description: "Навигатор и справочник"),
                         Divider(),
-                        ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
+                        ButtonIconTextArrow(icon: Image.asset("assets/map_pin_stag.webp", width: 50,), title: "Рогачи", description: "Вызвать ближайшего рогача"),
                         Divider(),
-                        ButtonIconTextArrow(icon: Icon(Icons.speed, color: Color.fromARGB(255, 30, 215, 96),), title: "Изменить суточный лимит", description: "На платежи и переводы"),
-                        TitleDesc(title: "Амулеты", description: "Текущие экипированные амулеты",),
-                        BunchaChips(chipLabels: ["Капризный компас", "Трюкач", "Быстрый удар", "Длинный гвоздь", "Метка гордости"]),
+                        ButtonIconTextArrow(icon: Image.asset("assets/bank.webp", height: 50,), title: "Банк", description: "Надёжные вклады в будущее"),
+                        TitleDesc(title: "Амулеты", description: "Список найденных амулетов",),
+                        BunchaChips(chipLabels: ["Капризный компас", "Трюкач", "Быстрый удар", "Длинный гвоздь", "Метка гордости", "Загребущий рой", "Ловец душ" , "Пожиратель душ" , "Песнь гусеничек" , "Ярость павшего"]),
                       ],
                     ),
                   )
