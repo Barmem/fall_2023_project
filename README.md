@@ -1,16 +1,9 @@
-# fall_2023_project
+# Лабораторная Flutter в Effective
 
-A new Flutter project.
+![скриншот гравной страницы](media/Screenshot_2024_02_25_16_29_38_376_com_example_fall_2023_project.jpg)
 
-## Getting Started
+## Описание
 
-This project is a starting point for a Flutter application.
+Приложения интереса ради я переделал тематически в стиле игры Hollow knight, структура осталась такая же как в примере
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Собирал на ноутбуке windows, запускал на андроид устройстве с помощью `flutter run` в корне проекта.
