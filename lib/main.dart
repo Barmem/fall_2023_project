@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TitleDesc(title: "Тарифы и лимиты", description: "Для операций Сбербанк Онлайн",),
+                        TitleDesc(title: "Меню", description: "Сервисы доступные в Халлоунест",),
                         ButtonIconTextArrow(icon: Image.asset("assets/map.webp", width: 50,), title: "Карта", description: "Навигатор и справочник"),
                         Divider(),
                         ButtonIconTextArrow(icon: Image.asset("assets/map_pin_stag.webp", width: 50,), title: "Рогачи", description: "Вызвать ближайшего рогача"),

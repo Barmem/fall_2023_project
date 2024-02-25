@@ -76,7 +76,7 @@ class funnyHorizontalCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           onTap: () {},
           child: Container(
-            constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
+            constraints: BoxConstraints(maxWidth: 300),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
